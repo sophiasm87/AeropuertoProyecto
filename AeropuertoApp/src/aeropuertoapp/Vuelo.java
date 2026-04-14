@@ -4,11 +4,6 @@
  */
 package aeropuertoapp;
 import javax.swing.JOptionPane;
-/**
- *
- * @author sophi
- */
-
 
 public class Vuelo {
 
@@ -17,18 +12,22 @@ public class Vuelo {
     private Avion avion;
 
     public Vuelo(String codigo, String destino, Avion avion) {
-        this.codigo = codigo;
+        this.codigo  = codigo;
         this.destino = destino;
-        this.avion = avion;
+        this.avion   = avion;
     }
+
+    // ── Getters nuevos (necesarios para la GUI) ──────────────
+    public String getCodigo()  { return codigo; }
+    public String getDestino() { return destino; }
 
     public void mostrarInfo(String horaSalida, String horaLlegada, String estado) {
         JOptionPane.showMessageDialog(null,
-                "Vuelo:\nCódigo: " + codigo
-                + "\nDestino: " + destino
-                + "\nHora salida: " + horaSalida
-                + "\nHora llegada: " + horaLlegada
-                + "\nEstado: " + estado);
+                "Vuelo:\nCódigo: "      + codigo
+                + "\nDestino: "         + destino
+                + "\nHora salida: "     + horaSalida
+                + "\nHora llegada: "    + horaLlegada
+                + "\nEstado: "          + estado);
         avion.mostrarInfo();
     }
 
